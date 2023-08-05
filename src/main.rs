@@ -2,7 +2,7 @@ use rand::prelude::*;
 
 
 fn main() {
-    let kart: Map = Map::create_map(4, 4);
+    let kart: Map = Map::create_map(Map, 4, 4);
     println!("{:?}", kart.matrix)
 }
 #[derive(Debug)]
@@ -35,7 +35,7 @@ fn bomb_chooser(chance_to_place: u32) -> u8 {
 }
 
 impl Map {
-    fn create_map(sizex: i32, sizey: i32) -> Map {
+    fn create_map(&self, sizex: i32, sizey: i32) -> Map {
         let mut map: Vec<Vec<Tile>> = vec![];
         for x in 0..sizex {
             let mut list: Vec<Tile> = vec![];
@@ -47,8 +47,30 @@ impl Map {
         }
         return Map { matrix: map };
     }
-}
+    fn print_map(self) {
+        let sizex:usize = self.matrix.len();
+        let sizey: usize = match self.matrix.get(0) {
+            Some(tile) => {
+                tile.len()
+            },
+            None => {
+                panic!("Uhm uhh... size not sizey enough");
+            },
+        };
+        for x in 0..sizex {
+            for y in 0..sizey {
 
+            }
+        }
+    }
+}
+/*
+⌜ ⁀ ⌝
+|    |
+⌞ ‿ ⌟
+
+
+*/
 
 /*
 
