@@ -48,3 +48,10 @@ impl Map {
         return Map { matrix: map };
     }
 }
+
+
+/*
+
+◜◝◟◞⌜⌝⌞⌟◻⁋◉
+
+*/
